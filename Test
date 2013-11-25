@@ -1,0 +1,58 @@
+
+/**
+ * Write a description of class Otazky here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+import java.util.ArrayList;
+public class Otazky
+{
+private ArrayList<String> otazky;
+    
+    public Otazky()
+    {
+        otazky = new ArrayList<String>();
+    }
+  
+    public void vlozOtazku(String paOtazka)
+    {
+        otazky.add(paOtazka);
+    }
+    
+    public void vypisOtazku(int paPoradoveCislo)
+    {
+        if ((paPoradoveCislo >= 0) && (paPoradoveCislo < dajPocetOtazok())) {
+            System.out.println(otazky.get(paPoradoveCislo));
+        }
+    }
+    
+    public void zmazOtazku(int paPoradoveCislo)
+    {
+        if ((paPoradoveCislo >= 0) && (paPoradoveCislo < dajPocetOtazok())) {
+            otazky.remove(paPoradoveCislo);
+        }
+    }
+    
+    public int dajPocetOtazok()
+    {
+        return otazky.size();
+    }
+    
+    public void zobrazVsetko()
+    {
+        for (String aktualna : otazky) {
+            System.out.println(aktualna);
+        }
+    }
+  
+    public void editujOtazku(int index,String paOtazka)
+   {
+   otazky.set(index,paOtazka);
+     }
+   
+     public String toString(){
+       return "Otazka" + otazky;
+    }
+}
+
